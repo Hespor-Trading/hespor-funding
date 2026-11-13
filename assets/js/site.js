@@ -5,17 +5,17 @@
   var FORM_ENDPOINT = 'https://formsubmit.co/ajax/info@hespor.com';
 
   var D = document, H = D.documentElement;
-  var L = (H.lang || 'en').indexOf('fa') === 0 ? 'fa' : 'en';
+  var L = (H.lang || 'en').indexOf('fr') === 0 ? 'fr' : 'en';
   function $(s, c) { return (c || D).querySelector(s); }
   function $$(s, c) { return Array.prototype.slice.call((c || D).querySelectorAll(s)); }
   var store = {
     get: function (k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
     set: function (k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
   };
-  function latin(s) { return String(s || '').replace(/[۰-۹]/g, function (d) { return '۰۱۲۳۴۵۶۷۸۹'.indexOf(d); }).replace(/[٠-٩]/g, function (d) { return '٠١٢٣٤٥٦٧٨٩'.indexOf(d); }); }
-  function num(s) { return parseFloat(latin(s).replace(/[^0-9.]/g, '')); }
-  function money(n) { n = Math.round(n); return L === 'fa' ? n.toLocaleString('fa-IR') + ' دلار' : '$' + n.toLocaleString('en-CA'); }
-  function dec(n) { return Number(n).toLocaleString(L === 'fa' ? 'fa-IR' : 'en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function latin(s) { return String(s || ''); }
+  function num(s) { return parseFloat(String(s || '').replace(/[^0-9.]/g, '')); }
+  function money(n) { n = Math.round(n); return L === 'fr' ? n.toLocaleString('fr-CA') + '\u00a0$' : '$' + n.toLocaleString('en-CA'); }
+  function dec(n) { return Number(n).toLocaleString(L === 'fr' ? 'fr-CA' : 'en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
 
   var T = {
     en: {
@@ -25,12 +25,12 @@
       req: 'Please complete this field.', choose: 'Please choose an option.', email: 'Enter a valid email, e.g. name@business.ca', phone: 'Enter a 10-digit phone number, e.g. 604-555-0123', consent: 'Please confirm we may contact you about this request.',
       sending: 'Sending…', fail: 'We could not send your request. Please try again or email info@hespor.com.', subj: 'New funding request'
     },
-    fa: {
-      note: 'جمع بازپرداخت چه در ۶، ۱۲، ۱۸ یا ۲۴ ماه، ثابت می‌ماند. مدت طولانی‌تر فقط هر قسط را کوچک‌تر می‌کند.',
-      okT: 'به احتمال زیاد حداقل شرایط را دارید', okP: 'کسب‌وکار شما با معیارهای اصلی شریک تأمین مالی ما جور است. درخواست‌تان را بفرستید تا همان روز کاری معرفی‌تان کنیم.', okB: 'درخواست گزینه‌ها',
-      noT: 'شاید هنوز به حداقل شرایط نرسیده باشید', noP: 'شریک تأمین مالی ما به کسب‌وکارهای کانادایی با دست‌کم ۶ ماه سابقه و بیش از ۱۰٬۰۰۰ دلار درآمد ماهانه سرمایه می‌دهد. باز هم می‌توانید اطلاعات‌تان را بفرستید؛ صادقانه می‌گوییم راهی هست یا نه.', noB: 'اطلاعاتم را می‌فرستم',
-      req: 'لطفاً این بخش را کامل کنید.', choose: 'لطفاً یک گزینه انتخاب کنید.', email: 'یک ایمیل معتبر وارد کنید، مثلاً name@business.ca', phone: 'شمارهٔ ۱۰ رقمی وارد کنید، مثلاً 604-555-0123', consent: 'لطفاً تأیید کنید که می‌توانیم دربارهٔ این درخواست با شما تماس بگیریم.',
-      sending: 'در حال ارسال…', fail: 'درخواست ارسال نشد. لطفاً دوباره امتحان کنید یا به info@hespor.com ایمیل بزنید.', subj: 'New funding request (Persian)'
+    fr: {
+      note: 'Le total reste le même, que vous remboursiez sur 6, 12, 18 ou 24 mois. Une durée plus longue ne fait que réduire chaque paiement.',
+      okT: 'Vous respectez probablement les minimums', okP: 'Votre entreprise correspond aux principaux critères de notre partenaire de financement. Demandez vos options et nous vous présenterons le jour ouvrable même.', okB: 'Demander mes options',
+      noT: 'Vous ne respectez peut-être pas encore les minimums', noP: 'Notre partenaire de financement finance les entreprises canadiennes ayant au moins 6 mois d’activité et plus de 10 000 $ de revenus mensuels. Vous pouvez quand même nous envoyer vos renseignements et nous vous dirons honnêtement s’il y a une option.', noB: 'Envoyer mes renseignements quand même',
+      req: 'Veuillez remplir ce champ.', choose: 'Veuillez choisir une option.', email: 'Entrez un courriel valide, p. ex. nom@entreprise.ca', phone: 'Entrez un numéro de téléphone à 10 chiffres, p. ex. 604-555-0123', consent: 'Veuillez confirmer que nous pouvons vous contacter au sujet de cette demande.',
+      sending: 'Envoi en cours…', fail: 'Nous n’avons pas pu envoyer votre demande. Veuillez réessayer ou écrire à info@hespor.com.', subj: 'New funding request (French)'
     }
   }[L];
 
@@ -168,7 +168,7 @@
         'Preferred language': lang ? lang.value : '', 'Consent to be contacted': 'Yes',
         'Submitted (Vancouver time)': now.toLocaleString('en-CA', { timeZone: 'America/Vancouver', dateStyle: 'full', timeStyle: 'long' }),
         'Submitted (UTC)': now.toISOString(),
-        'Site language': L === 'fa' ? 'Persian' : 'English',
+        'Site language': L === 'fr' ? 'French' : 'English',
         'Landing page': store.get('hf_landing') || location.pathname,
         'Eligibility check': store.get('hf_elig') || 'Not used',
         'Traffic source': [store.get('hf_utm_source'), store.get('hf_utm_medium'), store.get('hf_utm_campaign')].filter(Boolean).join(' / ') || store.get('hf_ref') || 'Direct',
@@ -202,5 +202,5 @@
     }, { threshold: 0.01 });
     targets.forEach(function (t) { io.observe(t); });
   }
-  var y = $('#yr'); if (y) y.textContent = L === 'fa' ? new Date().getFullYear().toLocaleString('fa-IR', { useGrouping: false }) : new Date().getFullYear();
+  var y = $('#yr'); if (y) y.textContent = new Date().getFullYear();
 })();

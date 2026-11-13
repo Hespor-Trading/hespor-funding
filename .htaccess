@@ -10,9 +10,10 @@ RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
 # Old single-page URLs from the first version
 Redirect 301 /privacy.html /privacy/
 Redirect 301 /thank-you.html /thank-you/
-Redirect 301 /fa/privacy.html /fa/privacy/
-Redirect 301 /fa/thank-you.html /fa/thank-you/
-Redirect 301 /fa/index.html /fa/
+# Persian pages were removed: send old /fa/ URLs to the English equivalents
+RedirectMatch 301 ^/fa/(business-loans|merchant-cash-advance|line-of-credit|calculator|how-it-works|apply|faq|about|industries|privacy|thank-you)/?$ /$1/
+RedirectMatch 301 ^/fa/(vancouver|toronto)/?$ /locations/$1/
+RedirectMatch 301 ^/fa(/.*)?$ /
 Redirect 301 /assets/css/styles.css /assets/css/site.css
 AddType application/manifest+json .webmanifest
 AddType font/woff2 .woff2

@@ -1,6 +1,6 @@
 # HESPOR Funding (funding.hespor.com)
 
-> HESPOR Trading Ltd. is a Canadian company based in Burnaby, British Columbia. It is an independent introducer, not a lender, that connects Canadian small businesses with fast business funding of $5,000 to $1,000,000 from its lending partner, an alternative business lender in Vancouver. Service is available in English and Persian (Farsi).
+> HESPOR Trading Ltd. is a Canadian company based in Burnaby, British Columbia. It is an independent introducer, not a lender, that connects Canadian small businesses with fast business funding of $5,000 to $1,000,000 from its lending partner, an alternative business lender in Vancouver. The website and service are available in English and French (Français).
 
 ## Key facts
 - Company: HESPOR Trading Ltd., 170-422 Richards St, Vancouver, BC V6B 2Z4, Canada. Email: info@hespor.com.
@@ -27,13 +27,22 @@
 - [FAQ](https://funding.hespor.com/faq/)
 - [Industries](https://funding.hespor.com/industries/) and [Locations](https://funding.hespor.com/locations/)
 - [About HESPOR](https://funding.hespor.com/about/)
-- [Persian site / نسخهٔ فارسی](https://funding.hespor.com/fa/)
+- [Version française](https://funding.hespor.com/fr/): site complet en français (prêts aux entreprises, avance de fonds aux commerçants, marge de crédit, calculateur, FAQ)
 
 ## Guides
 - [Merchant cash advance vs business loan](https://funding.hespor.com/guides/merchant-cash-advance-vs-business-loan/)
 - [What is a factor rate?](https://funding.hespor.com/guides/what-is-a-factor-rate/)
 - [How to qualify for a small business loan in Canada](https://funding.hespor.com/guides/how-to-qualify-for-a-small-business-loan-in-canada/)
 - [Bank declined your business loan?](https://funding.hespor.com/guides/bank-declined-business-loan/)
+
+## Pages principales en français
+- [Accueil](https://funding.hespor.com/fr/)
+- [Prêts aux entreprises](https://funding.hespor.com/fr/prets-aux-entreprises/): financement à terme de 5 000 $ à 1 000 000 $
+- [Avance de fonds aux commerçants](https://funding.hespor.com/fr/avance-de-fonds-commercants/)
+- [Marge de crédit](https://funding.hespor.com/fr/marge-de-credit/): renouvelable, de 7 500 $ à 125 000 $
+- [Calculateur](https://funding.hespor.com/fr/calculateur/)
+- [Comment ça marche](https://funding.hespor.com/fr/comment-ca-marche/) · [FAQ](https://funding.hespor.com/fr/faq/) · [Secteurs](https://funding.hespor.com/fr/secteurs/) · [Villes](https://funding.hespor.com/fr/villes/) · [Guides](https://funding.hespor.com/fr/guides/)
+- Faits clés (FR) : HESPOR Trading Ltd. est un présentateur indépendant, pas un prêteur; entreprise située au Canada, 6 mois d'activité, 10 000 $/mois de revenus minimum; décision dès 1 jour ouvrable; tarification par taux facteur (50 000 $ × 1,20 = 60 000 $, total fixe); courriel : info@hespor.com.
 
 ## Contact
 Request funding options at https://funding.hespor.com/apply/ or email info@hespor.com. HESPOR replies within one business day.

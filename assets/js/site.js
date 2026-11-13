@@ -23,6 +23,7 @@
       okT: 'You likely meet the minimums', okP: 'Your business fits the lending partner’s main criteria. Request your options and we will introduce you the same business day.', okB: 'Request my options',
       noT: 'You may not meet the minimums yet', noP: 'Our lending partner funds Canadian businesses with at least 6 months in operation and $10,000+ in monthly revenue. You can still send your details and we will tell you honestly if there is a fit.', noB: 'Send my details anyway',
       req: 'Please complete this field.', choose: 'Please choose an option.', email: 'Enter a valid email, e.g. name@business.ca', phone: 'Enter a 10-digit phone number, e.g. 604-555-0123', consent: 'Please confirm we may contact you about this request.',
+      auto: 'Thank you for your funding request (reference {id}). HESPOR Funding will reply within one business day, usually the same day. Keep your phone close: our lending partner may call you to complete a short application. HESPOR Trading Ltd. is not a lender; approval and terms are decided by our lending partner. Questions? Reply to info@hespor.com.',
       sending: 'Sending…', fail: 'We could not send your request. Please try again or email info@hespor.com.', subj: 'New funding request'
     },
     fr: {
@@ -30,6 +31,7 @@
       okT: 'Vous respectez probablement les minimums', okP: 'Votre entreprise correspond aux principaux critères de notre partenaire de financement. Demandez vos options et nous vous présenterons le jour ouvrable même.', okB: 'Demander mes options',
       noT: 'Vous ne respectez peut-être pas encore les minimums', noP: 'Notre partenaire de financement finance les entreprises canadiennes ayant au moins 6 mois d’activité et plus de 10 000 $ de revenus mensuels. Vous pouvez quand même nous envoyer vos renseignements et nous vous dirons honnêtement s’il y a une option.', noB: 'Envoyer mes renseignements quand même',
       req: 'Veuillez remplir ce champ.', choose: 'Veuillez choisir une option.', email: 'Entrez un courriel valide, p. ex. nom@entreprise.ca', phone: 'Entrez un numéro de téléphone à 10 chiffres, p. ex. 604-555-0123', consent: 'Veuillez confirmer que nous pouvons vous contacter au sujet de cette demande.',
+      auto: 'Merci pour votre demande de financement (référence {id}). HESPOR Funding vous répondra en un jour ouvrable, habituellement le jour même (notre équipe répond en anglais). Gardez votre téléphone à portée de main : notre partenaire de financement pourrait vous appeler. HESPOR Trading Ltd. n’est pas un prêteur; l’approbation et les conditions relèvent de notre partenaire de financement. Questions : info@hespor.com.',
       sending: 'Envoi en cours…', fail: 'Nous n’avons pas pu envoyer votre demande. Veuillez réessayer ou écrire à info@hespor.com.', subj: 'New funding request (French)'
     }
   }[L];
@@ -110,7 +112,7 @@
       if (elm.type === 'checkbox') return setErr(elm, elm.checked ? '' : T.consent);
       if (elm.required && !val) return setErr(elm, elm.tagName === 'SELECT' ? T.choose : T.req);
       if (elm.type === 'email' && val && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val)) return setErr(elm, T.email);
-      if (elm.type === 'tel' && val) { var d = latin(val).replace(/\D/g, ''); if (d.length === 11 && d[0] === '1') d = d.slice(1); if (d.length !== 10) return setErr(elm, T.phone); }
+      if (elm.type === 'tel' && val) { var d = latin(val).replace(/\D/g, ''); if (d.length === 11 && d[0] === '1') d = d.slice(1); if (d.length !== 10 || d[0] < '2' || d[3] < '2' || /^(\d)\1+$/.test(d)) return setErr(elm, T.phone); }
       return setErr(elm, '');
     }
     function vStep(i) {
@@ -159,21 +161,33 @@
       for (var i = 0; i < steps.length; i++) { if (!vStep(i)) { show(i); return; } }
       if ($('input[name=_honey]', form).value) return;
       var now = new Date(), g = function (id) { var x = D.getElementById(id); return x ? x.value.trim() : ''; };
-      var amtR = $('input[name=amount]:checked', form), lang = $('input[name=f-lang]:checked', form);
+      var amtR = $('input[name=amount]:checked', form);
+      var miss = [];
+      if (g('f-time') === 'Less than 6 months') miss.push('under 6 months in business');
+      if (g('f-rev') === 'Under $10,000') miss.push('revenue under $10K/month');
+      if (g('f-prov') === 'Outside Canada') miss.push('located outside Canada');
+      var pq = miss.length ? 'REVIEW: ' + miss.join('; ') : 'YES: meets all minimums (Canada, 6+ months, $10K+/month)';
+      var id = 'HF-' + now.toISOString().slice(0, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
       var data = {
-        'Full name': g('f-name'), 'Business name': g('f-biz'), 'City': g('f-city'), 'Province': g('f-prov'),
-        'Phone': latin(g('f-phone')), 'Email': g('f-email'),
-        'Type of business': g('f-type'), 'Time in business': g('f-time'), 'Average monthly revenue': g('f-rev'),
-        'Amount needed': amtR ? amtR.value : '', 'Use of funds': g('f-use'), 'Details': g('f-detail') || '-',
-        'Preferred language': lang ? lang.value : '', 'Consent to be contacted': 'Yes',
+        'Lead ID': id,
+        'Pre-qualification': pq,
+        'Amount needed': amtR ? amtR.value : '', 'Use of funds': g('f-use'), 'How soon needed': g('f-urg'),
+        'Business name': g('f-biz'), 'Business structure': g('f-struct'), 'Type of business': g('f-type'),
+        'Time in business': g('f-time'), 'Average monthly revenue': g('f-rev'),
+        'How customers pay': g('f-card'), 'Existing loans or advances': g('f-exist'),
+        'City': g('f-city'), 'Province': g('f-prov'), 'Website': g('f-web') || '-',
+        'Full name': g('f-name'), 'Role and ownership': g('f-role'), 'Estimated credit score': g('f-credit'),
+        'Phone': g('f-phone'), 'email': g('f-email'), 'Best time to call': g('f-best'),
+        'Details': g('f-detail') || '-', 'Consent to be contacted and shared with lender': 'Yes',
         'Submitted (Vancouver time)': now.toLocaleString('en-CA', { timeZone: 'America/Vancouver', dateStyle: 'full', timeStyle: 'long' }),
         'Submitted (UTC)': now.toISOString(),
         'Site language': L === 'fr' ? 'French' : 'English',
         'Landing page': store.get('hf_landing') || location.pathname,
         'Eligibility check': store.get('hf_elig') || 'Not used',
         'Traffic source': [store.get('hf_utm_source'), store.get('hf_utm_medium'), store.get('hf_utm_campaign')].filter(Boolean).join(' / ') || store.get('hf_ref') || 'Direct',
-        _subject: T.subj + ': ' + (g('f-biz') || g('f-name')) + ' (' + (amtR ? amtR.value : '') + ')',
-        _replyto: g('f-email'), _template: 'table', _captcha: 'false'
+        _subject: (miss.length ? '[REVIEW] ' : '[PRE-QUALIFIED] ') + T.subj + ': ' + g('f-biz') + ' (' + (amtR ? amtR.value : '') + ')',
+        _replyto: g('f-email'), _template: 'table', _captcha: 'false',
+        _autoresponse: T.auto.replace('{id}', id)
       };
       ['utm_term', 'utm_content', 'gclid', 'fbclid'].forEach(function (k) { if (store.get('hf_' + k)) data[k] = store.get('hf_' + k); });
       var btn = $('#f-submit'), lbl = btn.innerHTML; btn.disabled = true; btn.textContent = T.sending; status.hidden = true;

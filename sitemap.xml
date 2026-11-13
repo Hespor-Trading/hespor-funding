@@ -241,6 +241,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://funding.hespor.com/guides/bank-declined-business-loan/"/>
   </url>
   <url>
+    <loc>https://funding.hespor.com/guides/business-loans-for-bad-credit-canada/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://funding.hespor.com/guides/business-loans-for-bad-credit-canada/"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://funding.hespor.com/fr/guides/prets-aux-entreprises-mauvais-credit-canada/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://funding.hespor.com/guides/business-loans-for-bad-credit-canada/"/>
+  </url>
+  <url>
     <loc>https://funding.hespor.com/privacy/</loc>
     <lastmod>2026-11-12</lastmod>
     <priority>0.2</priority>
@@ -495,6 +503,14 @@
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://funding.hespor.com/guides/bank-declined-business-loan/"/>
     <xhtml:link rel="alternate" hreflang="fr-CA" href="https://funding.hespor.com/fr/guides/refus-de-pret-bancaire/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://funding.hespor.com/guides/bank-declined-business-loan/"/>
+  </url>
+  <url>
+    <loc>https://funding.hespor.com/fr/guides/prets-aux-entreprises-mauvais-credit-canada/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://funding.hespor.com/guides/business-loans-for-bad-credit-canada/"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://funding.hespor.com/fr/guides/prets-aux-entreprises-mauvais-credit-canada/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://funding.hespor.com/guides/business-loans-for-bad-credit-canada/"/>
   </url>
   <url>
     <loc>https://funding.hespor.com/fr/confidentialite/</loc>

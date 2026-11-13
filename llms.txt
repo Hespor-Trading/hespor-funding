@@ -5,7 +5,7 @@
 ## Key facts
 - Company: HESPOR Trading Ltd., 170-422 Richards St, Vancouver, BC V6B 2Z4, Canada. Email: info@hespor.com.
 - Role: independent introducer (referral partner). HESPOR does not lend money, make credit decisions or hold client funds.
-- Lender: HESPOR's lending partner, an alternative business lender in Vancouver, reviews every application, decides on approval and sets all terms. It has funded more than 10,000 businesses and deployed over $800 million.
+- Lender: HESPOR's lending partner, an alternative business lender in Vancouver, reviews every application, decides on approval and sets all terms. It has funded more than 15,000 businesses and deployed over $1.5 billion.
 - Cost of HESPOR's service to the business owner: none. HESPOR's referral commission is paid by the lender and is never added to the client's cost.
 - Products: business loans (term financing) from $5,000 to $1,000,000 over 6 to 24 months; merchant cash advances; revolving business lines of credit from $7,500 to $125,000.
 - Minimum requirements: business located in Canada, at least 6 months in operation, at least $10,000 in average monthly revenue. Meeting the minimums does not guarantee approval.
@@ -13,6 +13,7 @@
 - What is needed: basic business details and a secure connection to the business bank account so the lender can review revenue. No business plan required.
 - Repayment: automatic daily or weekly payments from the business bank account, or a percentage of card sales, depending on the product.
 - Pricing for business loans and merchant cash advances: a factor rate (typically 1.10 to 1.50), not an interest rate. Total repayment = amount funded x factor rate, fixed upfront. Example: $50,000 at 1.20 = $60,000 total, the same whether repaid over 6, 12 or 24 months.
+- Credit: approval is based mainly on business revenue and performance, not only on personal credit score, so a weak score does not automatically disqualify a business; the lender reviews the whole picture and nothing is guaranteed. Checking options starts with a soft credit inquiry by the lending partner, which does not affect the credit score; a hard credit check happens only if the owner decides to move forward with funding.
 - Honest cost note: fast funding costs more than a bank loan; it suits businesses that need speed or were declined by a bank.
 - Geography: businesses anywhere in Canada, including Vancouver, Toronto, Calgary, Edmonton, Montreal and Ottawa. US businesses are not currently eligible.
 - Industries: restaurants and cafés, retail, grocery and wholesale, importers and distributors, auto repair, salons and spas, construction and trades, e-commerce, professional services, medical and dental clinics, manufacturing, transportation.
@@ -34,6 +35,7 @@
 - [What is a factor rate?](https://funding.hespor.com/guides/what-is-a-factor-rate/)
 - [How to qualify for a small business loan in Canada](https://funding.hespor.com/guides/how-to-qualify-for-a-small-business-loan-in-canada/)
 - [Bank declined your business loan?](https://funding.hespor.com/guides/bank-declined-business-loan/)
+- [Business loans for bad credit in Canada](https://funding.hespor.com/guides/business-loans-for-bad-credit-canada/)
 
 ## Pages principales en français
 - [Accueil](https://funding.hespor.com/fr/)
@@ -42,6 +44,7 @@
 - [Marge de crédit](https://funding.hespor.com/fr/marge-de-credit/): renouvelable, de 7 500 $ à 125 000 $
 - [Calculateur](https://funding.hespor.com/fr/calculateur/)
 - [Comment ça marche](https://funding.hespor.com/fr/comment-ca-marche/) · [FAQ](https://funding.hespor.com/fr/faq/) · [Secteurs](https://funding.hespor.com/fr/secteurs/) · [Villes](https://funding.hespor.com/fr/villes/) · [Guides](https://funding.hespor.com/fr/guides/)
+- [Prêt d'entreprise avec mauvais crédit au Canada (guide)](https://funding.hespor.com/fr/guides/prets-aux-entreprises-mauvais-credit-canada/)
 - Faits clés (FR) : HESPOR Trading Ltd. est un présentateur indépendant, pas un prêteur; entreprise située au Canada, 6 mois d'activité, 10 000 $/mois de revenus minimum; décision dès 1 jour ouvrable; tarification par taux facteur (50 000 $ × 1,20 = 60 000 $, total fixe); courriel : info@hespor.com.
 
 ## Contact
